@@ -1,0 +1,6 @@
+<h1 class="text-xs-center">{{title}}</h1>
+<div id="container" class="container">
+    <div>
+        <div id="car-box" class="col-xs-6 col-md-4" app-car-item *ngFor="let car of (cars)" [car]=car></div>
+    </div>
+</div>

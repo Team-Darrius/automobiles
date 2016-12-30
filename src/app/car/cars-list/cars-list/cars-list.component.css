@@ -1,0 +1,9 @@
+#car-box {
+    width: 300px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+#container {
+    align-content: center;
+}
