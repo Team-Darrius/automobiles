@@ -8,7 +8,7 @@ import { AppRoutingModule } from './routing/app-routing.module'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { NavbarComponent, HomeComponent } from './components';
+import { NavbarComponent, HomeComponent, SaleCarComponent } from './components';
 
 import { CarsListComponent } from './car/cars-list/cars-list/cars-list.component';
 
@@ -25,11 +25,13 @@ import { AngularFireModule } from 'angularfire2/index';
       AppComponent,
       NavbarComponent,
       HomeComponent,
+      SaleCarComponent,
       LoginComponent,
       RegisterComponent, 
       CarsListComponent,
       CarItemComponent,
-      FirebaseTest
+      FirebaseTest,
+      SaleCarComponent
       ],
 
   imports: [
