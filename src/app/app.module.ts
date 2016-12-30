@@ -6,9 +6,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './routing/app-routing.module'
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NavbarComponent, HomeComponent } from './components';
 
 import { CarsListComponent } from './car/cars-list/cars-list/cars-list.component';
 
@@ -24,6 +24,7 @@ import { AngularFireModule } from 'angularfire2/index';
   declarations: [
       AppComponent,
       NavbarComponent,
+      HomeComponent,
       LoginComponent,
       RegisterComponent, 
       CarsListComponent,
