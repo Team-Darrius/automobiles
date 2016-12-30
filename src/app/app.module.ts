@@ -8,13 +8,11 @@ import { AppRoutingModule } from './routing/app-routing.module'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { NavbarComponent, HomeComponent, SaleCarComponent } from './components';
+import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, CarItemComponent } from './components';
 
-import { CarsListComponent } from './car/cars-list/cars-list/cars-list.component';
 
 import { CarService } from './services/car.service';
 import { FirebaseTest } from './services/firebase-test.component';
-import { CarItemComponent } from './car/car-item/car-item/car-item.component';
 
 import { firebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
