@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { CarsListComponent } from './car/cars-list/cars-list/cars-list.component';
 
 import { CarService } from './services/car.service';
+import { FirebaseTest } from './services/firebase-test.component';
 import { CarItemComponent } from './car/car-item/car-item/car-item.component';
 
 import { firebaseConfig } from '../environments/firebase.config';
@@ -25,7 +27,8 @@ import { AngularFireModule } from 'angularfire2/index';
       LoginComponent,
       RegisterComponent, 
       CarsListComponent,
-      CarItemComponent
+      CarItemComponent,
+      FirebaseTest
       ],
 
   imports: [

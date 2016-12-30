@@ -5,7 +5,6 @@ import { AngularFire } from 'angularfire2/index';
     selector: 'data-base',
     template: `<h1>{{title}}</h1>
                 <div>
-                    <p>{{item.id}} -> {{item.title}}</p>
                 </div>`
 })
 export class FirebaseTest{
