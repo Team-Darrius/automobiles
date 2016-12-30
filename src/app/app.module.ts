@@ -10,20 +10,27 @@ import { CarsListComponent } from './car/cars-list/cars-list/cars-list.component
 import { CarService } from './services/car.service';
 import { CarItemComponent } from './car/car-item/car-item/car-item.component';
 
+import {firebaseConfig} from '../environments/firebase.config';
+import { AngularFireModule } from 'angularfire2/index';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    CarsListComponent,
-    CarItemComponent
-  ],
+      AppComponent,
+      NavbarComponent,
+      CarsListComponent,
+      CarItemComponent 
+      ],
+
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
+      BrowserModule,
+      FormsModule,
+      HttpModule,
+      AngularFireModule.initializeApp(firebaseConfig)
+      ],
+
   providers: [CarService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
