@@ -12,4 +12,8 @@ img {
     padding: 20px 15px 15px 15px;
 }
 
-#img-wrapper {}
+.btn-lg {
+    background-color: white;
+    color: black;
+    border: none;
+}

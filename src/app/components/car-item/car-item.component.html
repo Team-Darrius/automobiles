@@ -1,12 +1,42 @@
 <div class="wrapper">
-    <div id="img-wrapper"><img src="{{picture}}"></div>
-    <div><strong>Model: </strong>{{model}}</div>
-    <div><strong>Brand: </strong>{{brand}}</div>
-    <div><strong>Year: </strong>{{year}}</div>
-    <div><strong>Location: </strong>{{location}}</div>
-    <div><strong>Transmission: </strong>{{transmission}}</div>
-    <div><strong>Color: </strong>{{color}}</div>
-    <div><strong>Power: </strong>{{power}}</div>
-    <div><strong>EngineType: </strong>{{engineType}}</div>
-    <div><strong>Price: </strong>{{price}}</div>
+    <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        <div id="img-wrapper"><img src="{{picture}}"></div>
+        <div><strong>Model: </strong>{{model}}</div>
+        <div><strong>Brand: </strong>{{brand}}</div>
+        <div><strong>Year: </strong>{{year}}</div>
+        <div><strong>Location: </strong>{{location}}</div>
+        <div><strong>Transmission: </strong>{{transmission}}</div>
+        <div><strong>Color: </strong>{{color}}</div>
+        <div><strong>Power: </strong>{{power}}</div>
+        <div><strong>EngineType: </strong>{{engineType}}</div>
+        <div><strong>Price: </strong>{{price}}</div>
+    </a>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                <h4 class="modal-title" id="myModalLabel">{{brand}} {{model}}</h4>
+            </div>
+            <div class="modal-body">
+                <div id="img-wrapper"><img src="{{picture}}"></div>
+                <div><strong>Model: </strong>{{model}}</div>
+                <div><strong>Brand: </strong>{{brand}}</div>
+                <div><strong>Year: </strong>{{year}}</div>
+                <div><strong>Location: </strong>{{location}}</div>
+                <div><strong>Transmission: </strong>{{transmission}}</div>
+                <div><strong>Color: </strong>{{color}}</div>
+                <div><strong>Power: </strong>{{power}}</div>
+                <div><strong>EngineType: </strong>{{engineType}}</div>
+                <div><strong>Price: </strong>{{price}}</div>
+            </div>
+            <div class="modal-footer">
+                <a routerLink="/register" routerLinkActive="active"><button type="button" class="btn btn-primary" data-dismiss="modal">Register</button></a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>

@@ -8,15 +8,13 @@ import { AppRoutingModule } from './routing/app-routing.module'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, CarItemComponent } from './components';
-
+import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, CarItemComponent, FindCarComponent } from './components';
 
 import { CarService } from './services/car.service';
 import { FirebaseTest } from './services/firebase-test.component';
 
 import { firebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
-
 
 @NgModule({
   declarations: [
@@ -29,7 +27,8 @@ import { AngularFireModule } from 'angularfire2/index';
       CarsListComponent,
       CarItemComponent,
       FirebaseTest,
-      SaleCarComponent
+      SaleCarComponent,
+      FindCarComponent,
       ],
 
   imports: [
