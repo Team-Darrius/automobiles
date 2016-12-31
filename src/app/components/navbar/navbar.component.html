@@ -1,7 +1,7 @@
 <nav class="navbar navbar-full navbar-dark bg-inverse">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">AUTOMOBILES</a>
+            <a class="navbar-brand" href="#">CARS 4 SALE</a>
         </div>
         <button class="navbar-toggler hidden-lg-up float-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
     &#9776;
@@ -12,7 +12,7 @@
                     <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">All cars</a>
+                    <a class="nav-link" href="/allcars" routerLinkActive="active">All cars</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/find-car" routerLinkActive="active" href="#">Find car</a>
@@ -27,7 +27,7 @@
             <ul class="nav navbar-nav float-xs-right">
                 <li>
                     <span *ngIf="af.auth | async">
-                        <a routerLink="/dashboard" class="button nav-link" routerLinkActive="active">
+                        <a routerLink="/dashboard" class="button nav-link" title="User profile" routerLinkActive="active">
                             <div *ngIf="userData.auth.displayName">{{ userData.auth.displayName }}</div>
                             <div *ngIf="userData.auth.displayName === null">Dashboard</div>
                         </a>
