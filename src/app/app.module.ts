@@ -9,8 +9,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent, PageNotFoundComponent } from './app.component';
 // import { LoginComponent } from './login/login.component';
 // import { RegisterComponent } from './register/register.component';
-import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, CarItemComponent } from './components';
-
+import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, CarItemComponent, FindCarComponent } from './components';
 
 
 import { AuthModule } from './auth/auth.module';
@@ -21,11 +20,6 @@ import { FirebaseTest } from './services/firebase-test.component';
 
 import { firebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule, FIREBASE_PROVIDERS, AngularFire, AuthMethods, AuthProviders } from 'angularfire2';
-
-export const firebaseAuthConfig = {
-  provider: AuthProviders.Password,
-  method: AuthMethods.Password
-}
 
 @NgModule({
   declarations: [
@@ -39,6 +33,7 @@ export const firebaseAuthConfig = {
       CarItemComponent,
       FirebaseTest,
       SaleCarComponent,
+      FindCarComponent,
       PageNotFoundComponent
       ],
 

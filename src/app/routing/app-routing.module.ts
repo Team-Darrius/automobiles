@@ -8,7 +8,7 @@ import { LoginComponent, SignupComponent } from '../auth/auth.component';
 
 import { AuthGuard } from '../auth/auth-guard.service';
 
-import { HomeComponent, SaleCarComponent } from '../components';
+import { HomeComponent, SaleCarComponent, FindCarComponent } from '../components';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
 import { PageNotFoundComponent } from '../app.component';
