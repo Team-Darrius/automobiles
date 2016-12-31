@@ -27,7 +27,10 @@
             <ul class="nav navbar-nav float-xs-right">
                 <li>
                     <span *ngIf="af.auth | async">
-                        <a routerLink="/dashboard" class="button nav-link" routerLinkActive="active">Dashboard</a>
+                        <a routerLink="/dashboard" class="button nav-link" routerLinkActive="active">
+                            <div *ngIf="userData.auth.displayName">{{ userData.auth.displayName }}</div>
+                            <div *ngIf="userData.auth.displayName === null">Dashboard</div>
+                        </a>
                         <a (click)="logout()" class="button nav-link" title="Logout" routerLinkActive="active"><i class="fa fa-power-off" aria-hidden="true"></i></a>
                     </span>
                 </li>
