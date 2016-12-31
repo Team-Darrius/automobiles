@@ -51,11 +51,11 @@ export class LoginComponent {
       }).then(
         (success) => {
         console.log(success);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);
       }).catch(
         (err) => {
         console.log(err);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);
       })
     } else {
       this.error = 'Your form is invalid';

@@ -1,0 +1,9 @@
+ul {
+    margin-top: 15px;
+}
+
+li {
+    display: inline;
+    padding-left: 5px;
+    text-decoration: none;
+}
