@@ -1,0 +1,29 @@
+<div class="well bs-component">
+    <form class="form-horizontal">
+        <div class="container">
+            <div class="callout alert" *ngIf="error">
+                {{ error }}
+            </div>
+            <legend>Login</legend>
+            <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Enter email" (ngModel)="email" requred>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" (ngModel)="password" required>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                        Check me out
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!formData.valid">Login</button>
+            </form>
+            <br/>
+            <a routerLink="/signup">Don't have an account?</a> &bull; <a routerLink="/password-reset">Forgotten password?</a>
+        </div>
+    </form>
+</div>

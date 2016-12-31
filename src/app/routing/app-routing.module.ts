@@ -1,25 +1,34 @@
 import { NgModule } from '@angular/core';
+import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
-import { RegisterComponent } from '../register/register.component';
+
+import { LoginComponent, SignupComponent } from '../auth/auth.component';
+// import { LoginComponent } from '../login/login.component';
+// import { RegisterComponent } from '../register/register.component';
+
+import { AuthGuard } from '../auth/auth-guard.service';
+
 import { HomeComponent, SaleCarComponent } from '../components';
-import { FirebaseTest } from './../services/firebase-test.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+
+import { PageNotFoundComponent } from '../app.component';
+
+//import { FirebaseTest } from './../services/firebase-test.component';
 //import { AuthGuard } from '../common/guards/';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent},
-  {path: 'sale-car', component: SaleCarComponent },
-  { path: 'test', component: FirebaseTest},
-  { path: '**',     redirectTo: '' }
+  // { path: 'login', component: LoginComponent },
+  // { path: 'signup', component: SignupComponent},
+  { path: 'sale-car', component: SaleCarComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: []
-})
+// @NgModule({
+//   imports: [RouterModule.forRoot(routes)],
+//   exports: [RouterModule],
+//   providers: []
+// })
 
-export class AppRoutingModule { }
+export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes);

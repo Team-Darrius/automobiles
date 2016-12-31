@@ -3,20 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './routing/app-routing.module'
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { AppRoutingModule } from './routing/app-routing.module';
+import { AppComponent, PageNotFoundComponent } from './app.component';
+// import { LoginComponent } from './login/login.component';
+// import { RegisterComponent } from './register/register.component';
 import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, CarItemComponent } from './components';
 
+
+
+import { AuthModule } from './auth/auth.module';
+import { DashModule } from './dashboard/dashboard.module';
 
 import { CarService } from './services/car.service';
 import { FirebaseTest } from './services/firebase-test.component';
 
 import { firebaseConfig } from '../environments/firebase.config';
-import { AngularFireModule } from 'angularfire2/index';
+import { AngularFireModule, FIREBASE_PROVIDERS, AngularFire, AuthMethods, AuthProviders } from 'angularfire2';
 
+export const firebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+}
 
 @NgModule({
   declarations: [
@@ -24,12 +33,13 @@ import { AngularFireModule } from 'angularfire2/index';
       NavbarComponent,
       HomeComponent,
       SaleCarComponent,
-      LoginComponent,
-      RegisterComponent, 
+      // LoginComponent,
+      // RegisterComponent, 
       CarsListComponent,
       CarItemComponent,
       FirebaseTest,
-      SaleCarComponent
+      SaleCarComponent,
+      PageNotFoundComponent
       ],
 
   imports: [
@@ -37,7 +47,10 @@ import { AngularFireModule } from 'angularfire2/index';
       FormsModule,
       HttpModule,
       AppRoutingModule,
-      AngularFireModule.initializeApp(firebaseConfig)
+      AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+      AuthModule,
+      DashModule,
+      CommonModule
   ],
 
   providers: [CarService],
