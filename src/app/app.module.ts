@@ -11,16 +11,11 @@ import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, Ca
 
 import { AuthModule } from './auth/auth.module';
 import { DashModule } from './dashboard/dashboard.module';
+import { AngularFireModule } from 'angularfire2';
 
 import { CarService } from './services/car.service';
-
 import { firebaseConfig } from '../environments/firebase.config';
-import { AngularFireModule, FIREBASE_PROVIDERS, AngularFire, AuthMethods, AuthProviders } from 'angularfire2';
-
-export const firebaseAuthConfig = {
-  provider: AuthProviders.Password,
-  method: AuthMethods.Password
-}
+import { AF, firebaseAuthConfig } from "../providers/af";
 
 @NgModule({
   declarations: [
@@ -46,7 +41,7 @@ export const firebaseAuthConfig = {
       CommonModule
   ],
 
-  providers: [CarService],
+  providers: [CarService, AF],
   bootstrap: [AppComponent]
 })
 

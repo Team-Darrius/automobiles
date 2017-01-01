@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseApp } from 'angularfire2';
+import { AF } from '../../../providers/af';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,17 +9,17 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent{
   public userData: any;
-  constructor(private af: AngularFire, private router: Router){ }
+  constructor(public afService: AF, private router: Router){ }
 
   ngOnInit() {
-        this.af.auth.subscribe(auth => {
+        this.afService.af.auth.subscribe(auth => {
           console.log(auth);
           this.userData = auth;
         });
     }
 
   logout() {
-    this.af.auth.logout();
+    this.afService.logout();
     this.router.navigate(['/'])
   }
 }

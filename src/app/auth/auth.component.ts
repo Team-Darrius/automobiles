@@ -1,7 +1,13 @@
 import { Component, Inject } from '@angular/core';
+import { AF } from '../../providers/af';
 import { Router } from '@angular/router';
+import { FirebaseApp } from 'angularfire2';
 
-import { AngularFire, FirebaseApp } from 'angularfire2';
+
+/**
+   * Sing Up the user
+   * 
+   */
 
 @Component({
   templateUrl: './signup.component.html'
@@ -10,12 +16,12 @@ import { AngularFire, FirebaseApp } from 'angularfire2';
 export class SignupComponent {
   public error: any;
 
-  constructor(private af: AngularFire, private router: Router) {  }
+  constructor( private afService:AF, private router: Router) {  }
 
   onSubmit(formData) {
     if(formData.valid) {
       console.log(formData.value);
-      this.af.auth.createUser({
+      this.afService.af.auth.createUser({
         email: formData.value.email,
         password: formData.value.password
       }).then(
@@ -33,6 +39,11 @@ export class SignupComponent {
   }
 }
 
+/**
+   * Logs in the user
+   * @returns {firebase.Promise<FirebaseAuthState>}
+   */
+
 @Component({
   templateUrl: './login.component.html'
 })
@@ -40,29 +51,37 @@ export class SignupComponent {
 export class LoginComponent {
   public error: any;
 
-  constructor(private af: AngularFire, private router: Router) { }
+  constructor(public afService: AF, private router: Router) { }
+
+  // onSubmit(formData) {
+  //   if(formData.valid) {
+  //     console.log(formData.value);
+  //     this.af.auth.login({
+  //       email: formData.value.email,
+  //       password: formData.value.password
+  //     }).then(
+  //       (success) => {
+  //       console.log(success);
+  //       this.router.navigate(['/home']);
+  //     }).catch(
+  //       (err) => {
+  //       console.log(err);
+  //       this.router.navigate(['/home']);
+  //     })
+  //   } else {
+  //     this.error = 'Your form is invalid';
+  //   }
+  // }
 
   onSubmit(formData) {
-    if(formData.valid) {
-      console.log(formData.value);
-      this.af.auth.login({
-        email: formData.value.email,
-        password: formData.value.password
-      }).then(
-        (success) => {
-        console.log(success);
-        this.router.navigate(['/home']);
-      }).catch(
-        (err) => {
-        console.log(err);
-        this.router.navigate(['/home']);
-      })
-    } else {
-      this.error = 'Your form is invalid';
-    }
+      this.afService.loginWithEmail(formData).then((data) => {
+      this.router.navigate(['/home']);
+    })
   }
 }
 
+
+// Reset Component
 @Component({
   templateUrl: 'app/auth/resetpassword.component.html'
 })
@@ -70,7 +89,9 @@ export class LoginComponent {
 export class ResetpassComponent {
   public auth: any;
   public message: any;
-  constructor(private af: AngularFire, @Inject(FirebaseApp) firebaseApp: any) {
+  
+  
+  constructor(private afService: AF, @Inject(FirebaseApp) firebaseApp: any) {
     this.auth = firebaseApp.auth()
     console.log(this.auth);
   }

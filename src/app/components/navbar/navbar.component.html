@@ -26,7 +26,7 @@
             </ul>
             <ul class="nav navbar-nav float-xs-right">
                 <li>
-                    <span *ngIf="af.auth | async">
+                    <span *ngIf="afService.af.auth | async">
                         <a routerLink="/dashboard" class="button nav-link" title="User profile" routerLinkActive="active">
                             <div *ngIf="userData.auth.displayName">{{ userData.auth.displayName }}</div>
                             <div *ngIf="userData.auth.displayName === null">Dashboard</div>
@@ -35,7 +35,7 @@
                     </span>
                 </li>
                 <li>
-                    <span *ngIf="!(af.auth | async)">
+                    <span *ngIf="!(afService.af.auth | async)">
                         <a class="nav-link" routerLink="/login">Login</a> 
                         <a class="nav-link" routerLink="/signup">Sign up</a>
                     </span>
