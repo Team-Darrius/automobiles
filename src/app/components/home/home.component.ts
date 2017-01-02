@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AF} from "../../../providers/af";
-import {FirebaseListObservable} from "angularfire2";
 
 @Component({
   selector: 'app-home',
@@ -8,13 +6,10 @@ import {FirebaseListObservable} from "angularfire2";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-public cars: FirebaseListObservable<any>;
-  constructor(public afService: AF) {
-    this.cars = this.afService.af.database.list('cars');
-   }
+
+  constructor() { }
 
   ngOnInit() {
-    console.log(this.cars);
   }
 
 }
