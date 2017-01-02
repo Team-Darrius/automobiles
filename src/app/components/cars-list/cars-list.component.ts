@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {AF} from "../../../providers/af";
+import {FirebaseListObservable} from "angularfire2";
 import { CarService } from '../../services/car.service';
 
 import { CarModel } from '../../models/car';
@@ -11,15 +12,27 @@ import { CarModel } from '../../models/car';
 })
 export class CarsListComponent implements OnInit {
   title: string;
-  cars: CarModel[];
+   public userData: any;
+  public newCar: CarModel;
+  public brand: string;
+  public model: string;
+  public year: string;
+  public location: string;
+  public transmission: string;
+  public color: string;
+  public power: string;
+  public engineType: string;
+  public picture: string;
+  public price: string;
+  public cars: FirebaseListObservable<any>;
+  public users: FirebaseListObservable<any>;
 
-  constructor(private _carService: CarService) { }
+  constructor(public afService: AF) {
+    this.cars = this.afService.cars;
+    this.users = this.afService.users;
+   }
 
   ngOnInit() {
     this.title = 'Last offers!';
-    this._carService
-      .getCars()
-      .subscribe(response => this.cars = response);
   }
-
 }
