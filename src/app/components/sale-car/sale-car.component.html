@@ -1,47 +1,60 @@
 <div class="well bs-component">
-    <form class="form-horizontal">
+    <div class="container">
+        <legend>Sale a car</legend>
+        <form class="form-horizontal" (submit)="createCar()">
+            <div class="form-group">
+                <!--<label for="car-brand"> Car brand</label>-->
+                <input type="text" [(ngModel)]="brand" name="brand" placeholder="Brand" class="form-control" id="car-brand">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-model">Car model</label>-->
+                <input type="text" [(ngModel)]="model" name="model" placeholder="Model" class="form-control" id="car-model">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-year">Car year</label>-->
+                <input type="text" [(ngModel)]="year" name="year" placeholder="Year" class="form-control" id="car-year">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-location">Car location</label>-->
+                <input type="text" [(ngModel)]="location" name="location" placeholder="Location" class="form-control" id="car-location">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-transmission">Car transmission</label>-->
+                <input type="text" [(ngModel)]="transmission" name="transmission" placeholder="Transmission" class="form-control" id="car-transmission">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-color">Car color</label>-->
+                <input type="text" [(ngModel)]="color" name="color" placeholder="Color" class="form-control" id="car-color">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-power">Car power</label>-->
+                <input type="text" [(ngModel)]="power" name="power" placeholder="Power" class="form-control" id="car-power">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-engine-type">Car engine type</label>-->
+                <input type="text" [(ngModel)]="engineType" name="engineType" placeholder="Engine Type" class="form-control" id="car-engine-type">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-engine-type">Car engine type</label>-->
+                <input type="text" [(ngModel)]="picture" name="picture" placeholder="Picture" class="form-control" id="car-picture">
+            </div>
+            <div class="form-group">
+                <!--<label for="car-price">Car price</label>-->
+                <input type="text" [(ngModel)]="price" name="price" placeholder="Price" class="form-control" id="car-price">
+            </div>
+            <div class="actions col-xs-12 row between-xs">
+                <button type="submit" class="btn-light">Add</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!--<form class="form-horizontal" (submit)="createCar()">
         <div class="container">
-            <fieldset>
-                <legend>Sale a car</legend>
-                <div class="form-group">
-                    <label for="car-model">Car model</label>
-                    <input type="text" class="form-control" id="car-model" placeholder="Model">
-                </div>
-                <div class="form-group">
-                    <label for="car-brand">Car brand</label>
-                    <input type="text" class="form-control" id="car-brand" placeholder="Brand">
-                </div>
-                <div class="form-group">
-                    <label for="car-year">Car year</label>
-                    <input type="text" class="form-control" id="car-year" placeholder="Year">
-                </div>
-                <div class="form-group">
-                    <label for="car-location">Car location</label>
-                    <input type="text" class="form-control" id="car-location" placeholder="Location">
-                </div>
-                <div class="form-group">
-                    <label for="car-transmission">Car transmission</label>
-                    <input type="text" class="form-control" id="car-transmission" placeholder="Transmission">
-                </div>
-                <div class="form-group">
-                    <label for="car-color">Car color</label>
-                    <input type="text" class="form-control" id="car-color" placeholder="Color">
-                </div>
-                <div class="form-group">
-                    <label for="car-power">Car power</label>
-                    <input type="text" class="form-control" id="car-power" placeholder="Power">
-                </div>
-                <div class="form-group">
-                    <label for="car-engine-type">Car engine type</label>
-                    <input type="text" class="form-control" id="car-engine-type" placeholder="Engine type">
-                </div>
-                <div class="form-group">
-                    <label for="car-price">Car pricee</label>
-                    <input type="text" class="form-control" id="car-price" placeholder="Price">
-                </div>
-            </fieldset>
+
             <button type="submit" class="btn btn-primary">Register</button>
-            <button type="submit" class="btn btn-primary">Clear form</button>
+            <button type="clear" class="btn btn-primary">Clear form</button>
         </div>
-    </form>
+    </form>-->
 </div>

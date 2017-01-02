@@ -1,11 +1,6 @@
 import {Injectable} from "@angular/core";
-import { AngularFireModule,
-         FIREBASE_PROVIDERS,
-         AngularFire,
-         AuthMethods,
-         AuthProviders,
-         FirebaseListObservable,
-         FirebaseApp } from 'angularfire2';
+import { AngularFireModule, FIREBASE_PROVIDERS, AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 'angularfire2';
+import { CarModel } from './../app/models/car';
 
 export const firebaseAuthConfig = {
     provider: AuthProviders.Password,
@@ -14,8 +9,9 @@ export const firebaseAuthConfig = {
 
 @Injectable()
 export class AF {
+
     public cars: FirebaseListObservable<any>;
-    public brand: string;
+    public newCar: CarModel;
     public users: FirebaseListObservable<any>;
     public displayName: string;
     public email: string;
@@ -62,14 +58,24 @@ addUserInfo(){
    * Saves a car to the Firebase Realtime Database
    * @param text
    */
-  sendCarToFB(text) {
-    var car = {
-      model: text,
-      brand: this.brand,
-      displayName: this.displayName,
-      email: this.email,
-      timestamp: Date.now()
+  sendCarToFB(newCar, user) {
+      console.log(newCar);
+    let car = {
+        brand: newCar.brand,
+        model: newCar.model,
+        year: newCar.year,
+        location: newCar.location,
+        transmission: newCar.transmission,
+        color: newCar.color,
+        power: newCar.power,
+        engineType: newCar.engineType,
+        picture: newCar.picture,
+        price: newCar.price,
+        displayName: user.auth.displayName,
+        email: user.auth.email,
+        timestamp: Date.now()
     };
+    console.log("Sending Car");
     this.cars.push(car);
   }
 }
