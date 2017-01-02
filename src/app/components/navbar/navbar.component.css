@@ -1,3 +1,11 @@
 .navbar-nav .nav-link {
     display: inline-block;
 }
+
+img {
+    height: 19px;
+    width: 19px;
+    border-radius: 1px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}

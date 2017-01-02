@@ -1,16 +1,23 @@
 <div class="well bs-component">
     <div class="container">
-        <h3>Profile Page</h3>
-        Below is the JSON data of the currently logged in User, but in summary:
+        <h3>Profile</h3>
+        <hr>
         <div *ngIf="!userData" class="callout alert">
             <p class="lead">
                 No Data available
             </p>
         </div>
         <div *ngIf="userData">
-            <p>
-                Email: {{ userData.auth.email }} <br> DisplayName: {{ userData.auth.displayName }} <br> Verification: {{ userData.auth.emailVerified}} <br> Login Means: {{ userData.auth.providerData | json }}
-            </p>
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="{{ userData.auth.photoURL}}" class="img-rounded" alt="user picture">
+                </div>
+                <div class="col-lg-9">
+                    <p>
+                        Email: {{ userData.auth.email }} <br> DisplayName: {{ userData.auth.displayName }} <br> Verification: {{ userData.auth.emailVerified}} <br> Login Means: {{ userData.auth.providerData | json }}
+                    </p>
+                </div>
+            </div>
             <hr> {{ userData | json }}
         </div>
     </div>

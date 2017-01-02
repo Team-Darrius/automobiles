@@ -7,3 +7,9 @@ li {
     padding-left: 5px;
     text-decoration: none;
 }
+
+img {
+    height: 140px;
+    width: 140px;
+    border-radius: 5px;
+}

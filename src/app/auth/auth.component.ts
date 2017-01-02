@@ -50,6 +50,7 @@ export class SignupComponent {
 
 export class LoginComponent {
   public error: any;
+  public userData: any;
 
   constructor(public afService: AF, private router: Router) { }
 
@@ -75,7 +76,13 @@ export class LoginComponent {
 
   onSubmit(formData) {
       this.afService.loginWithEmail(formData).then((data) => {
-      this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
+    }).then(() =>{
+        this.afService.af.auth.subscribe((auth) => {
+            this.afService.addUserInfo(auth.auth.email, auth.auth.displayName);
+            // this.afService.addUserInfo();
+        });
+      
     })
   }
 }

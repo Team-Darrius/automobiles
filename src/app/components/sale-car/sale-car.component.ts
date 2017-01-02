@@ -39,8 +39,7 @@ export class SaleCarComponent implements OnInit {
   }
 
   createCar() {
-
-        this.newCar = { 
+      this.newCar = { 
           brand: this.brand, 
           model: this.model,
           year: this.year,
@@ -55,17 +54,17 @@ export class SaleCarComponent implements OnInit {
 
         this.afService.sendCarToFB(this.newCar, this.userData);
 
-        // if (this.newCar.brand && this.newCar.model) {
-        //     this.newCar.brand = ''
-        //     this.newCar.model = ''
-        //     this.newCar.year = '1900'
-        //     this.newCar.location = ''
-        //     this.newCar.transmission = ''
-        //     this.newCar.color = ''
-        //     this.newCar.power = ''
-        //     this.newCar.engineType = ''
-        //     this.newCar.picture = ''
-        //     this.newCar.price = ''
-        // }
+        if (this.newCar.brand && this.newCar.model) {
+            this.brand = ''
+            this.model = ''
+            this.year = '1980'
+            this.location = ''
+            this.transmission = 'manual gear'
+            this.color = 'Blue'
+            this.power = '110 kW'
+            this.engineType = 'Benzine'
+            this.picture = 'http://starmoz.com/images/opel-astra-2008-4.jpg'
+            this.price = '5000'
+        }
   }
 }

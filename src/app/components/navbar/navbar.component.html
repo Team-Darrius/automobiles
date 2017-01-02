@@ -27,8 +27,11 @@
             <ul class="nav navbar-nav float-xs-right">
                 <li>
                     <span *ngIf="afService.af.auth | async">
-                        <a routerLink="/dashboard" class="button nav-link" title="User profile" routerLinkActive="active">
-                            <div *ngIf="userData.auth.displayName">{{ userData.auth.displayName }}</div>
+                        <a routerLink="/dashboard/profile" class="button nav-link" title="User profile" routerLinkActive="active">
+                            <div *ngIf="userData.auth.displayName">
+                                <img src="{{userData.auth.photoURL}}" alt="user picture">
+                                {{ userData.auth.displayName }}
+                                </div>
                             <div *ngIf="userData.auth.displayName === null">Dashboard</div>
                         </a>
                         <a (click)="logout()" class="button nav-link" title="Logout" routerLinkActive="active"><i class="fa fa-power-off" aria-hidden="true"></i></a>

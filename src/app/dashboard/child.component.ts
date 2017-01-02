@@ -3,7 +3,8 @@ import { AngularFire, FirebaseApp } from 'angularfire2';
 
 @Component({
   selector: 'profile',
-  templateUrl: 'app/dashboard/profile.component.html'
+  templateUrl: './profile.component.html',
+  styleUrls: ['./child.component.css']
 })
 
 export class ProfileComponent { 

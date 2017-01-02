@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import { AngularFireModule, FIREBASE_PROVIDERS, AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 'angularfire2';
 import { CarModel } from './../app/models/car';
+import { User } from '../app/models/user';
 
 export const firebaseAuthConfig = {
     provider: AuthProviders.Password,
@@ -10,11 +11,12 @@ export const firebaseAuthConfig = {
 @Injectable()
 export class AF {
 
-    public cars: FirebaseListObservable<any>;
-    public newCar: CarModel;
-    public users: FirebaseListObservable<any>;
+    public user: User;
     public displayName: string;
     public email: string;
+    public newCar: CarModel;
+    public cars: FirebaseListObservable<any>;
+    public users: FirebaseListObservable<User>;
 
     constructor(public af: AngularFire) {
         this.cars = this.af.database.list('cars');
@@ -46,12 +48,21 @@ logout() {
     return this.af.auth.logout();
     }
 
-addUserInfo(){
+addUserInfo(email, displayName){
     //We saved their auth info now save the rest to the db.
-    this.users.push({
-      email: this.email,
-      displayName: this.displayName
-    });
+    // this.af.auth.subscribe((auth)=>{
+    //                 this.email = auth.auth.email;
+    //                 this.displayName =auth.auth.displayName;
+    //                     console.log(this.email, this.displayName);
+
+        this.email = email
+        this.displayName = displayName
+        let user = {
+                email: this.email, 
+                displayName: this.displayName
+        }
+                console.log(user);
+        this.users.push(user)
   }
 
 /**
@@ -75,7 +86,6 @@ addUserInfo(){
         email: user.auth.email,
         timestamp: Date.now()
     };
-    console.log("Sending Car");
     this.cars.push(car);
   }
 }
