@@ -11,15 +11,15 @@ export const firebaseAuthConfig = {
 @Injectable()
 export class AF {
 
-    public user: User;
     public displayName: string;
     public email: string;
     public newCar: CarModel;
     public cars: FirebaseListObservable<any>;
-    public users: FirebaseListObservable<User>;
+    public users: FirebaseListObservable<any>;
 
     constructor(public af: AngularFire) {
         this.cars = this.af.database.list('cars');
+        // this.users = this.af.database.list('users');
     }
 
   /**
