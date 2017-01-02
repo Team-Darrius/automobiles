@@ -15,6 +15,7 @@ export class AF {
     public email: string;
     public newCar: CarModel;
     public cars: FirebaseListObservable<any>;
+    public allCars: CarModel[];
     public users: FirebaseListObservable<any>;
 
     constructor(public af: AngularFire) {
@@ -87,5 +88,15 @@ addUserInfo(email, displayName){
         timestamp: Date.now()
     };
     this.cars.push(car);
+  }
+
+  getAllCars(){
+      const getCars = this.af.database.list('/cars');
+      getCars.subscribe(queriedItems => {
+        console.log(queriedItems);
+        this.allCars = queriedItems;
+      });
+
+      return this.allCars;
   }
 }

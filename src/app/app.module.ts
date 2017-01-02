@@ -16,6 +16,7 @@ import { AngularFireModule } from 'angularfire2';
 import { CarService } from './services/car.service';
 import { firebaseConfig } from '../environments/firebase.config';
 import { AF, firebaseAuthConfig } from "../providers/af";
+import { SortPipe } from './pipes/sort-pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AF, firebaseAuthConfig } from "../providers/af";
       CarItemComponent,
       SaleCarComponent,
       FindCarComponent,
-      PageNotFoundComponent
+      PageNotFoundComponent,
+      SortPipe
       ],
 
   imports: [

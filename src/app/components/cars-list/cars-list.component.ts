@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import {AF} from "../../../providers/af";
 import {FirebaseListObservable} from "angularfire2";
@@ -11,8 +12,8 @@ import { CarModel } from '../../models/car';
   styleUrls: ['./cars-list.component.css']
 })
 export class CarsListComponent implements OnInit {
-  title: string;
-   public userData: any;
+  public title: string;
+  public userData: any;
   public newCar: CarModel;
   public brand: string;
   public model: string;
@@ -24,15 +25,20 @@ export class CarsListComponent implements OnInit {
   public engineType: string;
   public picture: string;
   public price: string;
-  public cars: FirebaseListObservable<any>;
+  public allCars: CarModel[];
   public users: FirebaseListObservable<any>;
 
   constructor(public afService: AF) {
-    this.cars = this.afService.cars;
     this.users = this.afService.users;
+    this.allCars = this.afService.getAllCars();
    }
 
   ngOnInit() {
-    this.title = 'Last offers!';
+    this.title = 'Last offers!';   
+    const getCars = this.afService.af.database.list('/cars');
+      getCars.subscribe(queriedItems => {
+        console.log(queriedItems);
+        this.allCars = queriedItems;
+      });
   }
 }
