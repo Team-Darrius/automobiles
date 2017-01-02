@@ -35,12 +35,18 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="text" placeholder="Brand" class="form-control" id="">
+                        <label for="transmissionSelect">Find by Transmission</label>
+                        <select class="form-control" id="transmissionSelect">
+                            <option *ngFor="let transmission of transmissions" [value]="transmission.key">{{transmission.value}}</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="text" placeholder="Brand" class="form-control" id="">
+                        <label for="engineTypeSelect">Find by Engine Type</label>
+                        <select class="form-control" id="engineTypeSelect">
+                            <option *ngFor="let engineType of engineTypes" [value]="engineType.key">{{engineType.value}}</option>
+                        </select>
                     </div>
                 </div>
             </div>
