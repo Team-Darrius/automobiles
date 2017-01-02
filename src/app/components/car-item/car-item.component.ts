@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AF } from '../../../providers/af';
 import { CarModel } from '../../models/car';
 
 @Component({
@@ -8,20 +9,23 @@ import { CarModel } from '../../models/car';
 })
 
 export class CarItemComponent implements OnInit {
-    brand: string;
-    model: string;
-    year: string;
-    location: string;
-    transmission: string;
-    color: string;
-    power: string;
-    engineType: string;
-    picture: string;
-    price: string;
+  brand: string;
+  model: string;
+  year: string;
+  location: string;
+  transmission: string;
+  color: string;
+  power: string;
+  engineType: string;
+  picture: string;
+  price: string;
 
-  constructor() { }
+  constructor(public afService: AF) { }
 
   ngOnInit() {
+    this.afService.af.auth.subscribe(auth => {
+      console.log(auth);
+    });
   }
 
   @Input('car') set car(car: CarModel) {
