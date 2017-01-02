@@ -1,0 +1,52 @@
+<div class="well well-sm">
+    <div class="container">
+        <legend>Find a car</legend>
+        <form class="form">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="brandSelect">Find by brand</label>
+                        <select class="form-control" id="brandSelect">
+                            <option *ngFor="let brand of brands" [value]="brand.key">{{brand.value}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="modelInput">Find by Model</label>
+                        <input type="text" placeholder="Model" class="form-control" id="modelInput">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="yearSelect">Find by year</label>
+                        <select class="form-control" id="yearSelect">
+                            <option *ngFor="let year of years" [value]="year">{{year}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="locationSelect">Find by location</label>
+                        <select class="form-control" id="locationSelect">
+                            <option *ngFor="let location of locations" [value]="location.key">{{location.value}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" placeholder="Brand" class="form-control" id="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" placeholder="Brand" class="form-control" id="">
+                    </div>
+                </div>
+            </div>
+            <div class="actions col-xs-12 row between-xs">
+                <button type="submit" class="btn btn-primary">Find</button>
+            </div>
+        </form>
+    </div>
+</div>

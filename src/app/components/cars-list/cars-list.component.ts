@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import {AF} from "../../../providers/af";
 import {FirebaseListObservable} from "angularfire2";
