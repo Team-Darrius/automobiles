@@ -38,10 +38,8 @@ export class SaleCarComponent implements OnInit {
     })
   }
 
-  //@Output() carCreated = new EventEmitter();
-
   createCar() {
-        // const {brand, model, year} = this.newCar;
+
         this.newCar = { 
           brand: this.brand, 
           model: this.model,
@@ -57,17 +55,17 @@ export class SaleCarComponent implements OnInit {
 
         this.afService.sendCarToFB(this.newCar, this.userData);
 
-        if (this.newCar.brand && this.newCar.model) {
-            this.newCar.brand = ''
-            this.newCar.model = ''
-            this.newCar.year = '1900'
-            this.newCar.location = ''
-            this.newCar.transmission = ''
-            this.newCar.color = ''
-            this.newCar.power = ''
-            this.newCar.engineType = ''
-            this.newCar.picture = ''
-            this.newCar.price = ''
-        }
+        // if (this.newCar.brand && this.newCar.model) {
+        //     this.newCar.brand = ''
+        //     this.newCar.model = ''
+        //     this.newCar.year = '1900'
+        //     this.newCar.location = ''
+        //     this.newCar.transmission = ''
+        //     this.newCar.color = ''
+        //     this.newCar.power = ''
+        //     this.newCar.engineType = ''
+        //     this.newCar.picture = ''
+        //     this.newCar.price = ''
+        // }
   }
 }
