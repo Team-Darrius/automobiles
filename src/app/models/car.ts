@@ -9,4 +9,5 @@ export class CarModel {
     engineType: string;
     picture: string;
     price: string;
+    timestamp: number;
 }

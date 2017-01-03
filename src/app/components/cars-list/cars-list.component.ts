@@ -24,6 +24,7 @@ export class CarsListComponent implements OnInit {
   public engineType: string;
   public picture: string;
   public price: string;
+  public timestamp: number;
   public allCars: CarModel[];
   public users: FirebaseListObservable<any>;
 
@@ -36,8 +37,8 @@ export class CarsListComponent implements OnInit {
     this.title = 'Last offers!';   
     const getCars = this.afService.af.database.list('/cars');
       getCars.subscribe(queriedItems => {
-        console.log(queriedItems);
         this.allCars = queriedItems;
+        this.allCars.sort((x, y) => {return (y.timestamp - x.timestamp);})
       });
   }
 }

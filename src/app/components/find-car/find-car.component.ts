@@ -93,27 +93,21 @@ export class FindCarComponent implements OnInit {
   findCar(){
     this.notFound = undefined;
     if (this.brand !== undefined && this.brand !== '') {
-      debugger;
       this.filteredCars = this.foundCars.filter(car => car.brand === this.brand);
     }
     if (this.model !== undefined && this.model !== '') {
-      debugger;
       this.filteredCars = this.foundCars.filter(car => car.model === this.model);
     }
     if (this.year !== undefined && this.year !== '') {
-      debugger;
       this.filteredCars = this.foundCars.filter(car => car.year === this.year);
     }
     if (this.location !== undefined && this.location !== '') {
-      debugger;
       this.filteredCars = this.foundCars.filter(car => car.location === this.location);
     }
     if (this.transmission !== undefined && this.transmission !== '') {
-      debugger;
       this.filteredCars = this.foundCars.filter(car => car.transmission === this.transmission);
     }
     if (this.engineType !== undefined && this.engineType !== '') {
-      debugger;
       this.filteredCars = this.foundCars.filter(car => car.engineType === this.engineType);
     }
     if (this.filteredCars.length < 1) {
