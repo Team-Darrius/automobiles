@@ -15,3 +15,7 @@ a {
     color: black;
     text-decoration: none;
 }
+
+#modal:hover {
+    background-color: #50AFE4;
+}
