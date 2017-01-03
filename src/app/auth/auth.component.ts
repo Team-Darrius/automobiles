@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { AF } from '../../providers/af';
 import { Router } from '@angular/router';
 import { FirebaseApp } from 'angularfire2';
+import { NotificationService } from '../services/index'
 
 
 /**
@@ -52,38 +53,27 @@ export class LoginComponent {
   public error: any;
   public userData: any;
 
-  constructor(public afService: AF, private router: Router) { }
-
-  // onSubmit(formData) {
-  //   if(formData.valid) {
-  //     console.log(formData.value);
-  //     this.af.auth.login({
-  //       email: formData.value.email,
-  //       password: formData.value.password
-  //     }).then(
-  //       (success) => {
-  //       console.log(success);
-  //       this.router.navigate(['/home']);
-  //     }).catch(
-  //       (err) => {
-  //       console.log(err);
-  //       this.router.navigate(['/home']);
-  //     })
-  //   } else {
-  //     this.error = 'Your form is invalid';
-  //   }
-  // }
+  constructor(public afService: AF, private router: Router, private notificationService: NotificationService) { }
 
   onSubmit(formData) {
-      this.afService.loginWithEmail(formData).then((data) => {
+    if(formData.valid) {
+      console.log(formData.value);
+      this.afService.af.auth.login({
+        email: formData.value.email,
+        password: formData.value.password
+      }).then(
+        (success) => {
+        console.log(success);
         this.router.navigate(['/home']);
-    }).then(() =>{
-        this.afService.af.auth.subscribe((auth) => {
-            this.afService.addUserInfo(auth.auth.email, auth.auth.displayName);
-            // this.afService.addUserInfo();
-        });
-      
-    })
+      }).catch(
+        (err) => {
+        this.notificationService.error(err.message);
+        console.log(err);
+        this.router.navigate(['/login']);
+      })
+    } else {
+      this.error = 'Your form is invalid';
+    }
   }
 }
 

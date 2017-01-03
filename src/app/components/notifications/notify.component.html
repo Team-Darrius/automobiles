@@ -1,0 +1,9 @@
+<div [@visibilityChanged]="isVisible" #wrapper *ngIf="message" [ngClass]="{ 
+        'alert': message,
+        'fade': message,
+        'in': message, 
+        'alert-success': message.type === 'success', 
+        'alert-danger': message.type === 'error' }">
+    <span class="close" data-dismiss="alert" aria-label="close" (click)="isVisible = !isVisible">×</span>
+    <strong>{{ message.type | uppercase }}:</strong> {{message.text}}
+</div>

@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent, PageNotFoundComponent } from './app.component';
-
+import { NotificationComponent } from './components/notifications/notify.component';
+import { NotificationService } from './services/index';
 import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, CarItemComponent, FindCarComponent } from './components';
 
 import { AuthModule } from './auth/auth.module';
@@ -18,6 +19,7 @@ import { firebaseConfig } from '../environments/firebase.config';
 import { AF, firebaseAuthConfig } from "../providers/af";
 import { SortPipe } from './pipes/sort-pipe';
 
+
 @NgModule({
   declarations: [
       AppComponent,
@@ -27,6 +29,7 @@ import { SortPipe } from './pipes/sort-pipe';
       CarsListComponent,
       CarItemComponent,
       SaleCarComponent,
+      NotificationComponent,
       FindCarComponent,
       PageNotFoundComponent,
       SortPipe
@@ -43,7 +46,9 @@ import { SortPipe } from './pipes/sort-pipe';
       CommonModule
   ],
 
-  providers: [CarService, AF],
+  providers: [CarService,
+              AF,
+              NotificationService ],
   bootstrap: [AppComponent]
 })
 
