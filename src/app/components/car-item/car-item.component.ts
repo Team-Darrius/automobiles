@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { AF } from '../../../providers/af';
 import { CarModel } from '../../models/car';
+import { ModalDirective } from 'ng2-bootstrap';
 
 @Component({
   selector: '[app-car-item]',
@@ -39,5 +40,15 @@ export class CarItemComponent implements OnInit {
     this.engineType = car.engineType;
     this.picture = car.picture;
     this.price = car.price;
+  }
+
+  @ViewChild('childModal') public childModal:ModalDirective;
+ 
+  public showChildModal():void {
+    this.childModal.show();
+  }
+ 
+  public hideChildModal():void {
+    this.childModal.hide();
   }
 }

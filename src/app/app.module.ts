@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
+import { ModalModule } from 'ng2-bootstrap/modal';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent, PageNotFoundComponent } from './app.component';
@@ -44,6 +45,7 @@ import { AboutComponent } from './components/about/about.component';
       AppRoutingModule,
       AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
       AuthModule,
+      ModalModule.forRoot(),
       DashModule,
       CommonModule
   ],
