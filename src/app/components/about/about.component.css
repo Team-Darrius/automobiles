@@ -1,0 +1,19 @@
+.container {
+    padding-top: 50px;
+}
+
+h1 {
+    padding-bottom: 50px;
+}
+
+.profiles {
+    margin-bottom: 0;
+}
+
+.repository {
+    margin-top: 20px;
+}
+
+.member-name {
+    margin: 20px 0;
+}
