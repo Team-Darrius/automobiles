@@ -21,7 +21,7 @@ export enum Location{
     'Silistra' = 19,
     'Sliven' = 20,
     'Smolian' = 21,
-    'Sofiq' = 22,
+    'Sofia' = 22,
     'Stara Zagora' = 23,
     'Targovishte' = 24,
     'Haskovo' = 25,

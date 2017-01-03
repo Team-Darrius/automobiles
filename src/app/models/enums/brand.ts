@@ -2,7 +2,7 @@ export enum Brand{
     '' = 0,
     'Alpha Romeo' = 1,
     'Audi' = 2,
-    'BMV' = 3,
+    'BMW' = 3,
     'Chevrolet' = 4,
     'Citroen' = 5,
     'Dacia' = 6,

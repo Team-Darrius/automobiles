@@ -18,6 +18,7 @@ import { CarService } from './services/car.service';
 import { firebaseConfig } from '../environments/firebase.config';
 import { AF, firebaseAuthConfig } from "../providers/af";
 import { SortPipe } from './pipes/sort-pipe';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SortPipe } from './pipes/sort-pipe';
       NotificationComponent,
       FindCarComponent,
       PageNotFoundComponent,
-      SortPipe
+      SortPipe,
+      AboutComponent
       ],
 
   imports: [

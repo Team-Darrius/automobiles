@@ -6,7 +6,7 @@ import { LoginComponent, SignupComponent } from '../auth/auth.component';
 
 import { AuthGuard } from '../auth/auth-guard.service';
 
-import { HomeComponent, SaleCarComponent, FindCarComponent, CarsListComponent } from '../components';
+import { HomeComponent, SaleCarComponent, FindCarComponent, CarsListComponent, AboutComponent } from '../components';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
 import { PageNotFoundComponent } from '../app.component';
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'allcars', component: CarsListComponent},
   { path: 'sale-car', component: SaleCarComponent },
   { path: 'find-car', component: FindCarComponent },
+  { path: 'about', component: AboutComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

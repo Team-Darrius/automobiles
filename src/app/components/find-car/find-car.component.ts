@@ -92,6 +92,7 @@ export class FindCarComponent implements OnInit {
 
   findCar(){
     this.notFound = undefined;
+    this.filteredCars = [];
     if (this.brand !== undefined && this.brand !== '') {
       this.filteredCars = this.foundCars.filter(car => car.brand === this.brand);
     }
