@@ -50,6 +50,7 @@ export class SaleCarComponent implements OnInit {
           engineType: this.engineType,
           picture: this.picture,
           price: this.price,
+          timestamp: 0
         }
 
         this.afService.sendCarToFB(this.newCar, this.userData);
@@ -59,7 +60,7 @@ export class SaleCarComponent implements OnInit {
             this.model = ''
             this.year = '1980'
             this.location = ''
-            this.transmission = 'manual gear'
+            this.transmission = 'manual'
             this.color = 'Blue'
             this.power = '110 kW'
             this.engineType = 'Benzine'
