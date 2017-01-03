@@ -1,4 +1,5 @@
 export enum Brand{
+    '' = 0,
     'Alpha Romeo' = 1,
     'Audi' = 2,
     'BMV' = 3,

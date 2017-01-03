@@ -1,0 +1,12 @@
+.container {
+    padding: 50px 0;
+}
+
+.well {
+    background-color: #cccccc;
+}
+
+.legend {
+    font-size: 1.3em;
+    color: #0275d8;
+}

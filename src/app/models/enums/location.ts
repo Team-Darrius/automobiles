@@ -1,4 +1,5 @@
 export enum Location{
+    '' = 0,
     'Blagoevgrad' = 1,
     'Burgas' = 2,
     'Varna' = 3,
