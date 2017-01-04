@@ -5,4 +5,5 @@ export { CarsListComponent } from './cars-list/cars-list.component';
 export { CarItemComponent } from './car-item/car-item.component';
 export { FindCarComponent } from './find-car/find-car.component';
 export { AboutComponent } from './about/about.component';
+export { FooterComponent } from './footer/footer.component';
 

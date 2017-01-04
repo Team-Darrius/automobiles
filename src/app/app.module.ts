@@ -9,7 +9,15 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent, PageNotFoundComponent } from './app.component';
 import { NotificationComponent } from './components/notifications/notify.component';
 import { NotificationService } from './services/index';
-import { NavbarComponent, HomeComponent, SaleCarComponent, CarsListComponent, CarItemComponent, FindCarComponent } from './components';
+import {
+    NavbarComponent,
+    HomeComponent,
+    SaleCarComponent,
+    CarsListComponent,
+    CarItemComponent,
+    FindCarComponent,
+    FooterComponent
+} from './components';
 
 import { AuthModule } from './auth/auth.module';
 import { DashModule } from './dashboard/dashboard.module';
@@ -23,37 +31,38 @@ import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
-  declarations: [
-      AppComponent,
-      NavbarComponent,
-      HomeComponent,
-      SaleCarComponent,
-      CarsListComponent,
-      CarItemComponent,
-      SaleCarComponent,
-      NotificationComponent,
-      FindCarComponent,
-      PageNotFoundComponent,
-      SortPipe,
-      AboutComponent
-      ],
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        HomeComponent,
+        SaleCarComponent,
+        CarsListComponent,
+        CarItemComponent,
+        SaleCarComponent,
+        NotificationComponent,
+        FindCarComponent,
+        PageNotFoundComponent,
+        SortPipe,
+        AboutComponent,
+        FooterComponent
+    ],
 
-  imports: [
-      BrowserModule,
-      FormsModule,
-      HttpModule,
-      AppRoutingModule,
-      AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
-      AuthModule,
-      ModalModule.forRoot(),
-      DashModule,
-      CommonModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule,
+        AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+        AuthModule,
+        ModalModule.forRoot(),
+        DashModule,
+        CommonModule
+    ],
 
-  providers: [CarService,
-              AF,
-              NotificationService ],
-  bootstrap: [AppComponent]
+    providers: [CarService,
+        AF,
+        NotificationService],
+    bootstrap: [AppComponent]
 })
 
 export class AppModule { }
