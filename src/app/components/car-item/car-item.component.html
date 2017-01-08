@@ -1,6 +1,6 @@
 <div class="wrapper">
     <!--<button type="button" class="btn btn-primary" (click)="showChildModal()">Open child modal</button>-->
-    <a id="modal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" (click)="showChildModal()">
+    <a id="modal" class="btn btn-primary btn-lg" (click)="showChildModal()">
         <div id="img-wrapper"><img src="{{picture}}"></div>
         <div><strong>Model: </strong>{{model}}</div>
         <div><strong>Brand: </strong>{{brand}}</div>
@@ -36,7 +36,7 @@
             </div>
             <div class="modal-footer">
                 <a *ngIf="!(afService.af.auth | async)" routerLink="/signup" routerLinkActive="active"><button type="button" class="btn btn-primary" data-dismiss="modal">Register</button></a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" (click)="hideChildModal()">Close</button>
             </div>
         </div>
     </div>

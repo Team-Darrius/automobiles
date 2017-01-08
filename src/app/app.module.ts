@@ -59,7 +59,7 @@ import { AboutComponent } from './components/about/about.component';
         CommonModule
     ],
 
-    providers: [CarService,
+    providers: [
         AF,
         NotificationService],
     bootstrap: [AppComponent]

@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {AF} from "../../../providers/af";
 import {FirebaseListObservable} from "angularfire2";
 import { CarModel } from './../../models/car';
+import { CarService } from './../../services/car.service';
 
 @Component({
   selector: 'app-sale-car',
   templateUrl: './sale-car.component.html',
-  styleUrls: ['./sale-car.component.css']
+  styleUrls: ['./sale-car.component.css'],
+  providers:[CarService]
 })
 
 export class SaleCarComponent implements OnInit {
